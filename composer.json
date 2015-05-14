@@ -1,26 +1,60 @@
 {
-    "name": "matthiasnoback/symfony-config-test",
-    "type": "library",
-    "description": "Library for testing user classes related to the Symfony Config Component",
-    "keywords": ["symfony", "config", "phpunit"],
-    "homepage": "https://github.com/matthiasnoback/SymfonyConfigTest",
-    "license": "MIT",
-    "authors": [
+    "name"        : "scribe/config-test-library",
+    "license"     : "MIT",
+    "type"        : "library",
+    "homepage"    : "https://scr.be/config-test-library",
+    "description" : "Library for testing user classes related to the Symfony Config Component.",
+    "support" : {
+        "email"  : "rmf@scr.be",
+        "issues" : "https://symfony-config-test-library.docs.scribe.tools/issues",
+        "source" : "https://symfony-config-test-library.docs.scribe.tools/git",
+        "irc"    : "irc://irc.efnet.org/scribe"
+    },
+    "keywords"    : [
+        "symfony-config-test-library",
+        "scribe-config-test-library",
+        "config-test-library",
+        "config-test",
+        "phpunit",
+        "symfony",
+        "symfony2",
+        "symfony-framework",
+        "scribe",
+        "scr",
+        "scribenet",
+        "scribeinc",
+        "scribe-software",
+        "scribe-services"
+    ],
+    "authors" : [
         {
-            "name": "Matthias Noback",
-            "email": "matthiasnoback@gmail.com",
-            "homepage": "http://php-and-symfony.matthiasnoback.nl"
+            "name"     : "Rob Frawley 2nd",
+            "email"    : "rmf@scr.be",
+            "homepage" : "https://scr.be/rmf",
+            "role"     : "Project Lead"
+        },
+        {
+            "name"     : "Matthias Noback",
+            "email"    : "matthiasnoback@gmail.com",
+            "homepage" : "http://php-and-symfony.matthiasnoback.nl"
         }
     ],
+    "require" : {
+        "php"                                  : ">=5.6.4",
+        "symfony/config"                       : "~2.6,>=2.6"
+    },
     "require-dev": {
-        "phpunit/phpunit": ">=3.7",
-        "sebastian/exporter": "1.*"
+        "phpunit/phpunit"                      : "~4.6",
+        "sebastian/exporter"                   : "~1.2"
     },
     "autoload": {
-        "psr-4" : { "Matthias\\SymfonyConfigTest\\" : "" }
+        "psr-4" : {
+            "Scribe\\UnitTest\\SymfonyConfig\\" : "lib"
+        }
     },
-    "require": {
-        "php": ">=5.3",
-        "symfony/config": "2.*"
+    "config" : {
+        "bin-dir"           : "bin",
+        "preferred-install" : "auto",
+        "minimum-stability" : "stable"
     }
 }
