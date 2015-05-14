@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures;
+namespace Scribe\Test\Symfony\Config\Tests\TestCase\Fixtures;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

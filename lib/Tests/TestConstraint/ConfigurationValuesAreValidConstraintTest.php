@@ -10,11 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\Tests;
+namespace Scribe\Test\Symfony\Config\Tests\TestConstraint;
 
-use Scribe\Test\Symfony\Config\PhpUnit\ConfigurationValuesAreValidConstraint;
-use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\AlwaysValidConfiguration;
-use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
+use Scribe\Test\Symfony\Config\TestConstraint\ConfigurationValuesAreValidConstraint;
+use Scribe\Test\Symfony\Config\Tests\TestCase\Fixtures\AlwaysValidConfiguration;
+use Scribe\Test\Symfony\Config\Tests\TestCase\Fixtures\ConfigurationWithRequiredValue;
 
 class ConfigurationValuesAreValidConstraintTest extends \PHPUnit_Framework_TestCase
 {

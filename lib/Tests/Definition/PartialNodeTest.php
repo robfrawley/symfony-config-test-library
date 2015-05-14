@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\Tests\Partial;
+namespace Scribe\Test\Symfony\Config\Tests\Definition;
 
-use Scribe\Test\Symfony\Config\Partial\PartialNode;
+use Scribe\Test\Symfony\Config\Definition\PartialNode;
 use Symfony\Component\Config\Definition\ArrayNode;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
@@ -93,7 +93,7 @@ class PartialNodeTest extends \PHPUnit_Framework_TestCase
         $node = $treeBuilder->buildTree();
 
         $this->setExpectedException(
-            'Scribe\Test\Symfony\Config\Partial\Exception\UndefinedChildNode',
+            'Scribe\Test\Symfony\Config\Definition\Exception\UndefinedChildNode',
             'Undefined child node "non_existing_node" (the part of the path that was successful: "root.sub_node")'
         );
         PartialNode::excludeEverythingNotInPath($node, ['sub_node', 'non_existing_node']);
@@ -112,7 +112,7 @@ class PartialNodeTest extends \PHPUnit_Framework_TestCase
         $node = $treeBuilder->buildTree();
 
         $this->setExpectedException(
-            'Scribe\Test\Symfony\Config\Partial\Exception\ChildIsNotAnArrayNode',
+            'Scribe\Test\Symfony\Config\Definition\Exception\ChildIsNotAnArrayNode',
             'Child node "scalar_node" is not an array node (current path: "root.sub_node")'
         );
         PartialNode::excludeEverythingNotInPath($node, ['sub_node', 'scalar_node']);

@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\PhpUnit;
+namespace Scribe\Test\Symfony\Config\TestCase;
 
 /**
  * Class AbstractConfigurationTestCase.

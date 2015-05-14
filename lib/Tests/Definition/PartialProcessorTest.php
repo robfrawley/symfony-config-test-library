@@ -12,9 +12,9 @@
 
 namespace Scribe\Test\Symfony\Config\Tests\Partial;
 
-use Scribe\Test\Symfony\Config\Partial\PartialProcessor;
-use Scribe\Test\Symfony\Config\Tests\Partial\Fixtures\ConfigurationStub;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Scribe\Test\Symfony\Config\Definition\PartialProcessor;
+use Scribe\Test\Symfony\Config\Tests\Definition\Fixtures\ConfigurationStub;
 
 /**
  * Class PartialProcessorTest.

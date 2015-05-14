@@ -12,8 +12,8 @@
 
 namespace Scribe\Test\Symfony\Config\Tests;
 
-use Scribe\Test\Symfony\Config\PhpUnit\ConfigurationTestCaseTrait;
-use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
+use Scribe\Test\Symfony\Config\TestCase\ConfigurationTestCaseTrait;
+use Scribe\Test\Symfony\Config\Tests\TestCase\Fixtures\ConfigurationWithRequiredValue;
 
 /**
  * Class ConfigurationTestCaseTraitTest.

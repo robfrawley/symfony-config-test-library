@@ -10,7 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\PhpUnit;
+namespace Scribe\Test\Symfony\Config\TestCase;
+
+use Scribe\Test\Symfony\Config\TestConstraint\ConfigurationValuesAreInvalidConstraint;
+use Scribe\Test\Symfony\Config\TestConstraint\ConfigurationValuesAreValidConstraint;
+use Scribe\Test\Symfony\Config\TestConstraint\ProcessedConfigurationEqualsConstraint;
 
 /**
  * Trait ConfigurationTestCaseTrait.

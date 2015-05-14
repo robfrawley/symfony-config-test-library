@@ -10,11 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\PhpUnit;
+namespace Scribe\Test\Symfony\Config\TestConstraint;
 
-use Scribe\Test\Symfony\Config\Partial\PartialProcessor;
 use SebastianBergmann\Exporter\Exporter;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Scribe\Test\Symfony\Config\Definition\PartialProcessor;
 
 /**
  * Class AbstractConfigurationConstraint.

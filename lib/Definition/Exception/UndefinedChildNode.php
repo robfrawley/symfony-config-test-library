@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\Partial\Exception;
+namespace Scribe\Test\Symfony\Config\Definition\Exception;
 
 use Symfony\Component\Config\Definition\NodeInterface;
 

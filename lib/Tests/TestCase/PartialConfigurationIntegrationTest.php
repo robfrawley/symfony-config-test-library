@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\Tests;
+namespace Scribe\Test\Symfony\Config\Tests\TestCase;
 
-use Scribe\Test\Symfony\Config\PhpUnit\AbstractConfigurationTestCase;
-use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\ConfigurationWithMultipleArrayKeys;
+use Scribe\Test\Symfony\Config\TestCase\AbstractConfigurationTestCase;
+use Scribe\Test\Symfony\Config\Tests\TestCase\Fixtures\ConfigurationWithMultipleArrayKeys;
 
 class PartialConfigurationIntegrationTest extends AbstractConfigurationTestCase
 {

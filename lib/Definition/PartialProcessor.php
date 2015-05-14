@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Test\Symfony\Config\Partial;
+namespace Scribe\Test\Symfony\Config\Definition;
 
 use Symfony\Component\Config\Definition\ArrayNode;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
