@@ -45,7 +45,9 @@
     },
     "require-dev": {
         "phpunit/phpunit"                      : "~4.6",
-        "sebastian/exporter"                   : "~1.2"
+        "sebastian/exporter"                   : "~1.2",
+        "scrutinizer/ocular"                   : "dev-master",
+        "satooshi/php-coveralls"               : "dev-multipleroot"
     },
     "autoload": {
         "psr-4" : {
@@ -56,5 +58,11 @@
         "bin-dir"           : "bin",
         "preferred-install" : "auto",
         "minimum-stability" : "stable"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/scribenet/php-coveralls.git"
+        }
+    ]
 }
