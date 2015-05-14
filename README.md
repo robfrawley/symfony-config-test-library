@@ -1,8 +1,10 @@
 # SymfonyConfigTest
 
-*By Matthias Noback*
-
-[![Build Status](https://secure.travis-ci.org/matthiasnoback/SymfonyConfigTest.png)](http://travis-ci.org/matthiasnoback/SymfonyConfigTest)
+[![Travis](https://img.shields.io/travis/scribenet/symfony-config-test-library/master.svg?style=flat-square)](https://symfony-config-test-library.docs.scribe.tools/ci) 
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/scribenet/symfony-config-test-library/master.svg?style=flat-square)](https://symfony-config-test-library.docs.scribe.tools/quality)
+[![Coveralls](https://img.shields.io/coveralls/scribenet/symfony-config-test-library/master.svg?style=flat-square)](https://symfony-config-test-library.docs.scribe.tools/coverage)
+[![Gemnasium](https://img.shields.io/gemnasium/scribenet/symfony-config-test-library.svg?style=flat-square)](https://symfony-config-test-library.docs.scribe.tools/deps)
+[![License](https://img.shields.io/badge/license-MIT-008AC6.svg?style=flat-square)](https://symfony-config-test-library.docs.scribe.tools/license)
 
 Writing configuration classes using the [Symfony Config
 Component](http://symfony.com/doc/current/components/config/definition.html) can be quite hard. To help you verify the
@@ -16,7 +18,7 @@ Using Composer:
 
 ## Usage
 
-### PHP 5.4 and up
+### PHP 5.6 and up
 
 Create a test case and use the trait from ``Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait``.
 Then implement ``getConfiguration()``:
@@ -28,23 +30,6 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     use ConfigurationTestCaseTrait;
 
-    protected function getConfiguration()
-    {
-        return new Configuration();
-    }
-}
-```
-
-### PHP 5.3
-
-Create a test case and extend from ``Matthias\SymfonyConfigTest\PhpUnit\AbstractConfigurationTestCase``. Then implement
-``getConfiguration()``:
-
-```php
-<?php
-
-class ConfigurationTest extends AbstractConfigurationTestCase
-{
     protected function getConfiguration()
     {
         return new Configuration();
