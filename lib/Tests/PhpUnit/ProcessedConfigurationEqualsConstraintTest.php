@@ -10,15 +10,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Tests;
+namespace Scribe\Test\Symfony\Config\Tests;
 
-use Scribe\UnitTest\SymfonyConfig\PhpUnit\ProcessedConfigurationEqualsConstraint;
-use Scribe\UnitTest\SymfonyConfig\Tests\PhpUnit\Fixtures\AlwaysValidConfiguration;
-use Scribe\UnitTest\SymfonyConfig\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
+use Scribe\Test\Symfony\Config\PhpUnit\ProcessedConfigurationEqualsConstraint;
+use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\AlwaysValidConfiguration;
+use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
 
 class ProcessedConfigurationEqualsConstraintTest extends \PHPUnit_Framework_TestCase
 {
-    public function test_if_configuration_is_invalid_it_does_not_match()
+    public function testIfConfigIsInvalidItDoesNotMatch()
     {
         $constraint = new ProcessedConfigurationEqualsConstraint(
             new AlwaysValidConfiguration(),
@@ -28,7 +28,7 @@ class ProcessedConfigurationEqualsConstraintTest extends \PHPUnit_Framework_Test
         static::assertFalse($constraint->evaluate(array('non-existing-key' => array()), '', true));
     }
 
-    public function test_if_processed_configuration_equals_the_expected_values_it_matches()
+    public function testIfProcessedConfigMatchesExpectedValues()
     {
         $value = 'some value';
 
@@ -37,10 +37,10 @@ class ProcessedConfigurationEqualsConstraintTest extends \PHPUnit_Framework_Test
             array(array('required_value' => $value))
         );
 
-        static::assertTrue($constraint->evaluate(array('required_value'=> $value), '', true));
+        static::assertTrue($constraint->evaluate(array('required_value' => $value), '', true));
     }
 
-    public function test_to_string_is_not_implemented()
+    public function testToStringIsNotImplements()
     {
         $constraint = new ProcessedConfigurationEqualsConstraint(
             new AlwaysValidConfiguration(),

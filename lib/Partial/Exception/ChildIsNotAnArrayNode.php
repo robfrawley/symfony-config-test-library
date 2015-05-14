@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Partial\Exception;
+namespace Scribe\Test\Symfony\Config\Partial\Exception;
 
 use Symfony\Component\Config\Definition\BaseNode;
 

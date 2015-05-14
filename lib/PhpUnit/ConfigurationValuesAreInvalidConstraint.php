@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\PhpUnit;
+namespace Scribe\Test\Symfony\Config\PhpUnit;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
@@ -42,7 +42,7 @@ class ConfigurationValuesAreInvalidConstraint extends AbstractConfigurationConst
         parent::__construct($configuration, $breadcrumbPath);
 
         $this->expectedExceptionMessage = $expectedExceptionMessage;
-        $this->exceptionMessageAsRegex  = $exceptionMessageAsRegex;
+        $this->exceptionMessageAsRegex = $exceptionMessageAsRegex;
     }
 
     /**
@@ -77,7 +77,7 @@ class ConfigurationValuesAreInvalidConstraint extends AbstractConfigurationConst
         $toString = 'is invalid for the given configuration';
 
         if ($this->expectedExceptionMessage !== null) {
-            $toString .= ' (expected exception message: ' . $this->expectedExceptionMessage . ')';
+            $toString .= ' (expected exception message: '.$this->expectedExceptionMessage.')';
         }
 
         return $toString;

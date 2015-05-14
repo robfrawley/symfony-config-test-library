@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Tests;
+namespace Scribe\Test\Symfony\Config\Tests;
 
-use Scribe\UnitTest\SymfonyConfig\PhpUnit\ConfigurationTestCaseTrait;
-use Scribe\UnitTest\SymfonyConfig\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
+use Scribe\Test\Symfony\Config\PhpUnit\ConfigurationTestCaseTrait;
+use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
 
 /**
  * Class ConfigurationTestCaseTraitTest.
@@ -34,7 +34,7 @@ class ConfigurationTestCaseTraitTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertConfigurationIsInvalid(
             [
-                [] // no configuration values
+                [], // no configuration values
             ],
             'required_value'
         );
@@ -46,7 +46,7 @@ class ConfigurationTestCaseTraitTest extends \PHPUnit_Framework_TestCase
 
         $this->assertConfigurationIsInvalid(
             [
-                ['required_value' => 'some value']
+                ['required_value' => 'some value'],
             ]
         );
     }
@@ -55,7 +55,7 @@ class ConfigurationTestCaseTraitTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertConfigurationIsValid(
             [
-                ['required_value' => 'some value']
+                ['required_value' => 'some value'],
             ]
         );
     }
@@ -66,7 +66,7 @@ class ConfigurationTestCaseTraitTest extends \PHPUnit_Framework_TestCase
 
         $this->assertConfigurationIsValid(
             [
-                []
+                [],
             ]
         );
     }
@@ -78,10 +78,10 @@ class ConfigurationTestCaseTraitTest extends \PHPUnit_Framework_TestCase
         $this->assertProcessedConfigurationEquals(
             [
                 [],
-                ['required_value' => $value]
+                ['required_value' => $value],
             ],
             [
-                'required_value' => $value
+                'required_value' => $value,
             ]
         );
     }
@@ -93,10 +93,10 @@ class ConfigurationTestCaseTraitTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException('\PHPUnit_Framework_ExpectationFailedException', 'equal');
         $this->assertProcessedConfigurationEquals(
             [
-                ['required_value' => $value]
+                ['required_value' => $value],
             ],
             [
-                'invalid_key' => 'invalid_value'
+                'invalid_key' => 'invalid_value',
             ]
         );
     }
@@ -107,11 +107,11 @@ class ConfigurationTestCaseTraitTest extends \PHPUnit_Framework_TestCase
 
         //$this->setExpectedException('\PHPUnit_Framework_ExpectationFailedException', 'equal');
         $configurationValues = [
-            ['required_value' => $value]
+            ['required_value' => $value],
         ];
 
         $expectedProcessedConfigurationValues = [
-            'invalid_key' => 'invalid_value'
+            'invalid_key' => 'invalid_value',
         ];
 
         try {

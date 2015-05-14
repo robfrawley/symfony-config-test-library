@@ -10,14 +10,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Partial;
+namespace Scribe\Test\Symfony\Config\Partial;
 
-use Scribe\UnitTest\SymfonyConfig\Partial\Exception\ChildIsNotAnArrayNode;
-use Scribe\UnitTest\SymfonyConfig\Partial\Exception\UndefinedChildNode;
+use Scribe\Test\Symfony\Config\Partial\Exception\ChildIsNotAnArrayNode;
+use Scribe\Test\Symfony\Config\Partial\Exception\UndefinedChildNode;
 use Symfony\Component\Config\Definition\ArrayNode;
 
 /**
- * Class PartialNode
+ * Class PartialNode.
  */
 class PartialNode
 {

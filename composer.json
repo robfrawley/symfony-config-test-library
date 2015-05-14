@@ -51,7 +51,7 @@
     },
     "autoload": {
         "psr-4" : {
-            "Scribe\\UnitTest\\SymfonyConfig\\" : "lib"
+            "Scribe\\Test\\Symfony\\Config\\" : "lib"
         }
     },
     "config" : {

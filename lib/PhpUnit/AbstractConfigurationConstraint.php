@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\PhpUnit;
+namespace Scribe\Test\Symfony\Config\PhpUnit;
 
-use Scribe\UnitTest\SymfonyConfig\Partial\PartialProcessor;
+use Scribe\Test\Symfony\Config\Partial\PartialProcessor;
 use SebastianBergmann\Exporter\Exporter;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -37,9 +37,9 @@ abstract class AbstractConfigurationConstraint extends \PHPUnit_Framework_Constr
      */
     public function __construct(ConfigurationInterface $configuration, $breadcrumbPath = null)
     {
-        $this->configuration  = $configuration;
+        $this->configuration = $configuration;
         $this->breadcrumbPath = $breadcrumbPath;
-        $this->exporter       = new Exporter();
+        $this->exporter = new Exporter();
 
         parent::__construct();
     }

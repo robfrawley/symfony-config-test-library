@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Tests;
+namespace Scribe\Test\Symfony\Config\Tests;
 
-use Scribe\UnitTest\SymfonyConfig\PhpUnit\AbstractConfigurationTestCase;
-use Scribe\UnitTest\SymfonyConfig\Tests\PhpUnit\Fixtures\ConfigurationWithMultipleArrayKeys;
+use Scribe\Test\Symfony\Config\PhpUnit\AbstractConfigurationTestCase;
+use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\ConfigurationWithMultipleArrayKeys;
 
 class PartialConfigurationIntegrationTest extends AbstractConfigurationTestCase
 {
@@ -25,18 +25,18 @@ class PartialConfigurationIntegrationTest extends AbstractConfigurationTestCase
         return new ConfigurationWithMultipleArrayKeys();
     }
 
-    public function test_it_can_assert_that_a_configuration_is_invalid()
+    public function testAssertConfigIsInvalid()
     {
         $this->assertPartialConfigurationIsInvalid(
             [
-                [] // no configuration values
+                [], // no configuration values
             ],
             'array_node_1',
             'array_node_1'
         );
     }
 
-    public function test_it_fails_when_a_configuration_is_valid_when_it_should_have_been_invalid()
+    public function testItFailsWhenConfigIsValidWhenItShouldHaveBeenInvalid()
     {
         $this->setExpectedException('\PHPUnit_Framework_ExpectationFailedException', 'invalid');
 
@@ -44,41 +44,41 @@ class PartialConfigurationIntegrationTest extends AbstractConfigurationTestCase
             [
                 [
                     'array_node_1' => [
-                        'required_value_1' => 'some value'
-                    ]
-                ]
+                        'required_value_1' => 'some value',
+                    ],
+                ],
             ],
             'array_node_1'
         );
     }
 
-    public function test_it_can_assert_that_a_configuration_is_valid()
+    public function testAssertThatConfigIsValid()
     {
         $this->assertConfigurationIsValid(
             [
                 [
                     'array_node_1' => [
-                        'required_value_1' => 'some value'
-                    ]
-                ]
+                        'required_value_1' => 'some value',
+                    ],
+                ],
             ],
             'array_node_1'
         );
     }
 
-    public function test_it_fails_when_a_configuration_is_invalid_when_it_should_have_been_valid()
+    public function testItFailsWhenConfigIsInvalidWhenItShouldHaveBeenValid()
     {
         $this->setExpectedException('\PHPUnit_Framework_ExpectationFailedException', 'valid');
 
         $this->assertConfigurationIsValid(
             [
-                []
+                [],
             ],
             'array_node_1'
         );
     }
 
-    public function test_it_can_assert_that_a_processed_configuration_matches_the_expected_array_of_values()
+    public function testAssertThatAProcessedConfigMatchesTheArrayOfValues()
     {
         $value = 'some value';
 
@@ -87,20 +87,20 @@ class PartialConfigurationIntegrationTest extends AbstractConfigurationTestCase
                 [],
                 [
                     'array_node_1' => [
-                        'required_value_1' => $value
-                    ]
-                ]
+                        'required_value_1' => $value,
+                    ],
+                ],
             ],
             [
                 'array_node_1' => [
-                    'required_value_1' => $value
-                ]
+                    'required_value_1' => $value,
+                ],
             ],
             'array_node_1'
         );
     }
 
-    public function test_it_fails_when_a_processed_configuration_does_not_match_the_expected_array_of_values()
+    public function testItFailsWhenProcessedConfigDoesNotMatchTheArrayofValues()
     {
         $value = 'some value';
 
@@ -109,31 +109,31 @@ class PartialConfigurationIntegrationTest extends AbstractConfigurationTestCase
             [
                 [
                     'array_node_1' => [
-                        'required_value_1' => $value
-                    ]
-                ]
+                        'required_value_1' => $value,
+                    ],
+                ],
             ],
             [
-                'invalid_key' => 'invalid_value'
+                'invalid_key' => 'invalid_value',
             ],
             'array_node_1'
         );
     }
 
-    public function test_it_throws_a_comparison_failed_exception_with_the_values_in_the_right_order()
+    public function testThrowsComparisonFailedExceptionWithValuesOrderedCorrectly()
     {
         $value = 'some value';
 
         $configurationValues = [
             [
                 'array_node_1' => [
-                    'required_value_1' => $value
-                ]
-            ]
+                    'required_value_1' => $value,
+                ],
+            ],
         ];
 
         $expectedProcessedConfigurationValues = [
-            'invalid_key' => 'invalid_value'
+            'invalid_key' => 'invalid_value',
         ];
 
         try {

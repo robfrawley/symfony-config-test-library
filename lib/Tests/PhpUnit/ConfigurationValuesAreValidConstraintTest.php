@@ -10,15 +10,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Tests;
+namespace Scribe\Test\Symfony\Config\Tests;
 
-use Scribe\UnitTest\SymfonyConfig\PhpUnit\ConfigurationValuesAreValidConstraint;
-use Scribe\UnitTest\SymfonyConfig\Tests\PhpUnit\Fixtures\AlwaysValidConfiguration;
-use Scribe\UnitTest\SymfonyConfig\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
+use Scribe\Test\Symfony\Config\PhpUnit\ConfigurationValuesAreValidConstraint;
+use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\AlwaysValidConfiguration;
+use Scribe\Test\Symfony\Config\Tests\PhpUnit\Fixtures\ConfigurationWithRequiredValue;
 
 class ConfigurationValuesAreValidConstraintTest extends \PHPUnit_Framework_TestCase
 {
-    public function test_if_configuration_values_is_no_array_it_fails()
+    public function testItFailsIfConfigValuesIsNotArray()
     {
         $constraint = new ConfigurationValuesAreValidConstraint(new AlwaysValidConfiguration());
 
@@ -27,7 +27,7 @@ class ConfigurationValuesAreValidConstraintTest extends \PHPUnit_Framework_TestC
         $constraint->evaluate('not an array');
     }
 
-    public function test_if_configuration_values_is_no_array_of_arrays_it_fails()
+    public function testItFailsIfConfigValuesIsNotArrayOfArrays()
     {
         $constraint = new ConfigurationValuesAreValidConstraint(new AlwaysValidConfiguration());
 
@@ -36,21 +36,21 @@ class ConfigurationValuesAreValidConstraintTest extends \PHPUnit_Framework_TestC
         $constraint->evaluate(array('not an array'));
     }
 
-    public function test_if_configuration_values_are_valid_it_matches()
+    public function testMatchesIfConfigValuesAreValid()
     {
         $constraint = new ConfigurationValuesAreValidConstraint(new AlwaysValidConfiguration());
 
         static::assertTrue($constraint->evaluate(array(array()), '', true));
     }
 
-    public function test_if_configuration_values_are_invalid_it_does_not_match()
+    public function testDoesNotMatchIfConfigValuesAreInvalid()
     {
         $constraint = new ConfigurationValuesAreValidConstraint(new ConfigurationWithRequiredValue());
 
         static::assertFalse($constraint->evaluate(array(array()), '', true));
     }
 
-    public function test_to_string_returns_a_message()
+    public function testToStringReturnsMessage()
     {
         $constraint = new ConfigurationValuesAreValidConstraint(new AlwaysValidConfiguration());
 

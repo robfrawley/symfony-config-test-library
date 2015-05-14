@@ -1,6 +1,6 @@
 <?php
 
-namespace Scribe\UnitTest\SymfonyConfig\Tests\Partial\Fixtures;
+namespace Scribe\Test\Symfony\Config\Tests\Partial\Fixtures;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

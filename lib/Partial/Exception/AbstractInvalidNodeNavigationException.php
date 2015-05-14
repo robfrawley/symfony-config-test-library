@@ -10,11 +10,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Partial\Exception;
+namespace Scribe\Test\Symfony\Config\Partial\Exception;
 
 /**
  * Class AbstractInvalidNodeNavigationException.
  */
-abstract class AbstractInvalidNodeNavigationException extends \LogicException {}
+abstract class AbstractInvalidNodeNavigationException extends \LogicException
+{
+}
 
 /* EOF */

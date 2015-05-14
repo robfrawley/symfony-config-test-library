@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Tests\Partial;
+namespace Scribe\Test\Symfony\Config\Tests\Partial;
 
-use Scribe\UnitTest\SymfonyConfig\Partial\PartialProcessor;
-use Scribe\UnitTest\SymfonyConfig\Tests\Partial\Fixtures\ConfigurationStub;
+use Scribe\Test\Symfony\Config\Partial\PartialProcessor;
+use Scribe\Test\Symfony\Config\Tests\Partial\Fixtures\ConfigurationStub;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 /**
@@ -45,21 +45,21 @@ class PartialProcessorTest extends \PHPUnit_Framework_TestCase
         $processedConfig = $partialProcessor->process($node, 'only_test_this_node', [
             [
                 'only_test_this_node' => [
-                    'scalar_node' => 'no'
-                ]
+                    'scalar_node' => 'no',
+                ],
             ],
             [
                 'only_test_this_node' => [
-                    'scalar_node' => 'yes'
-                ]
-            ]
+                    'scalar_node' => 'yes',
+                ],
+            ],
         ]);
 
         static::assertSame(
             [
                 'only_test_this_node' => [
-                    'scalar_node' => 'yes'
-                ]
+                    'scalar_node' => 'yes',
+                ],
             ],
             $processedConfig
         );
@@ -75,17 +75,17 @@ class PartialProcessorTest extends \PHPUnit_Framework_TestCase
             [
                 [
                     'only_test_this_node' => [
-                        'scalar_node' => 'yes'
-                    ]
-                ]
+                        'scalar_node' => 'yes',
+                    ],
+                ],
             ]
         );
 
         static::assertSame(
             [
                 'only_test_this_node' => [
-                    'scalar_node' => 'yes'
-                ]
+                    'scalar_node' => 'yes',
+                ],
             ],
             $processedConfig
         );

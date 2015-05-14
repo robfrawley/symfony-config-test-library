@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\PhpUnit;
+namespace Scribe\Test\Symfony\Config\PhpUnit;
 
 /**
- * Trait ConfigurationTestCaseTrait
+ * Trait ConfigurationTestCaseTrait.
  *
  * Add this trait to your Test Case to add the ability of testing your configuration
  * which should implement Symfony\Component\Config\Definition\ConfigurationInterface
@@ -22,7 +22,7 @@ trait ConfigurationTestCaseTrait
 {
     /**
      * Return the instance of ConfigurationInterface that should be used by the
-     * Configuration-specific assertions in this test-case
+     * Configuration-specific assertions in this test-case.
      *
      * @return \Symfony\Component\Config\Definition\ConfigurationInterface
      */
@@ -32,7 +32,7 @@ trait ConfigurationTestCaseTrait
      * Assert that the given configuration values are invalid.
      *
      * @param array       $configurationValues
-     * @param string      $breadcrumbPath The path that should be validated, e.g. "doctrine.orm"
+     * @param string      $breadcrumbPath           The path that should be validated, e.g. "doctrine.orm"
      * @param string|null $expectedExceptionMessage
      * @param bool        $exceptionMessageAsRegex
      */

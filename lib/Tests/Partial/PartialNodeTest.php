@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\UnitTest\SymfonyConfig\Tests\Partial;
+namespace Scribe\Test\Symfony\Config\Tests\Partial;
 
-use Scribe\UnitTest\SymfonyConfig\Partial\PartialNode;
+use Scribe\Test\Symfony\Config\Partial\PartialNode;
 use Symfony\Component\Config\Definition\ArrayNode;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
@@ -38,7 +38,7 @@ class PartialNodeTest extends \PHPUnit_Framework_TestCase
                         ->scalarNode('node_2_scalar_node');
 
         $node = $treeBuilder->buildTree();
-        /** @var ArrayNode $node */
+        /* @var ArrayNode $node */
 
         PartialNode::excludeEverythingNotInPath($node, ['node_2']);
 
@@ -72,7 +72,7 @@ class PartialNodeTest extends \PHPUnit_Framework_TestCase
                         ->scalarNode('scalar_node');
 
         $node = $treeBuilder->buildTree();
-        /** @var ArrayNode $node */
+        /* @var ArrayNode $node */
 
         PartialNode::excludeEverythingNotInPath($node, ['node_1', 'node_1_b']);
 
@@ -93,7 +93,7 @@ class PartialNodeTest extends \PHPUnit_Framework_TestCase
         $node = $treeBuilder->buildTree();
 
         $this->setExpectedException(
-            'Scribe\UnitTest\SymfonyConfig\Partial\Exception\UndefinedChildNode',
+            'Scribe\Test\Symfony\Config\Partial\Exception\UndefinedChildNode',
             'Undefined child node "non_existing_node" (the part of the path that was successful: "root.sub_node")'
         );
         PartialNode::excludeEverythingNotInPath($node, ['sub_node', 'non_existing_node']);
@@ -112,7 +112,7 @@ class PartialNodeTest extends \PHPUnit_Framework_TestCase
         $node = $treeBuilder->buildTree();
 
         $this->setExpectedException(
-            'Scribe\UnitTest\SymfonyConfig\Partial\Exception\ChildIsNotAnArrayNode',
+            'Scribe\Test\Symfony\Config\Partial\Exception\ChildIsNotAnArrayNode',
             'Child node "scalar_node" is not an array node (current path: "root.sub_node")'
         );
         PartialNode::excludeEverythingNotInPath($node, ['sub_node', 'scalar_node']);
@@ -125,6 +125,7 @@ class PartialNodeTest extends \PHPUnit_Framework_TestCase
         $children = $property->getValue($node);
 
         static::assertCount(1, $children);
+
         $firstChild = reset($children);
         static::assertSame($nodeName, $firstChild->getName());
 
