@@ -62,7 +62,7 @@ class ConfigurationValuesAreInvalidConstraint extends AbstractConfigurationConst
             return $this->evaluateException($exception, $description, $returnResult);
         }
 
-        if ($returnResult) {
+        if (true === $returnResult) {
             return false;
         }
 
@@ -86,7 +86,7 @@ class ConfigurationValuesAreInvalidConstraint extends AbstractConfigurationConst
     /**
      * @param \Exception $exception
      * @param string     $description
-     * @param string     $returnResult
+     * @param bool       $returnResult
      *
      * @return bool|mixed
      */

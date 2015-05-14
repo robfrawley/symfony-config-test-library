@@ -33,7 +33,7 @@ abstract class AbstractConfigurationConstraint extends \PHPUnit_Framework_Constr
 
     /**
      * @param ConfigurationInterface $configuration
-     * @param null                   $breadcrumbPath
+     * @param null|string            $breadcrumbPath
      */
     public function __construct(ConfigurationInterface $configuration, $breadcrumbPath = null)
     {
