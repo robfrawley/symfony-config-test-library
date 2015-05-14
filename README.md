@@ -1,4 +1,4 @@
-# SymfonyConfigTest
+# Scribe / Symfony Config Test Library
 
 [![Travis](https://img.shields.io/travis/scribenet/symfony-config-test-library/master.svg?style=flat-square)](https://symfony-config-test-library.docs.scribe.tools/ci) 
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/scribenet/symfony-config-test-library/master.svg?style=flat-square)](https://symfony-config-test-library.docs.scribe.tools/quality)
@@ -10,18 +10,34 @@ Writing configuration classes using the [Symfony Config
 Component](http://symfony.com/doc/current/components/config/definition.html) can be quite hard. To help you verify the
 validity of the resulting config node tree, this library provides a PHPUnit test case and some custom assertions.
 
+## Requirements
+
+- PHP >= 5.6.4
+- Symfony >= 2.6
+
 ## Installation
 
-Using Composer:
+Using Composer CLI to get the latest codebase:
 
-    php composer.phar require --dev matthiasnoback/symfony-config-test 0.*
+```bash
+php composer.phar require --dev scribe/symfony-config-test-lib dev-master
+```
+
+Or add the dependency to your `composer.json` files (likely within the `requireDev` block) restricting it to tagged released of `0.x`:
+
+```yaml
+"require-dev": {
+    "phpunit/phpunit"                      : "~4.6",
+    "scribe/symfony-config-test-lib"       : "~0.5"
+}
+```
 
 ## Usage
 
-### PHP 5.6 and up
+### Basic
 
-Create a test case and use the trait from ``Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait``.
-Then implement ``getConfiguration()``:
+Create a test case and use the trait from `Scribe\UnitTest\SymfonyConfig\PhpUnit\ConfigurationTestCaseTrait`. Within this test 
+case, implement `getConfiguration()`:
 
 ```php
 <?php

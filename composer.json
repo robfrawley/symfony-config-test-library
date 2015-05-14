@@ -1,5 +1,5 @@
 {
-    "name"        : "scribe/config-test-library",
+    "name"        : "scribe/symfony-config-test-lib",
     "license"     : "MIT",
     "type"        : "library",
     "homepage"    : "https://scr.be/config-test-library",
