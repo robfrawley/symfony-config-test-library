@@ -12,10 +12,8 @@ matrix:
     include:
         - php: 5.6
         - php: nightly
-        - php: hhvm-nightly
     allow_failures:
         - php: nightly
-        - php: hhvm-nightly
     fast_finish: true
 
 notifications:
